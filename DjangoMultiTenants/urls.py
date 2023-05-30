@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from tenant import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('members/', views.get_members,name='members'),
 ]
