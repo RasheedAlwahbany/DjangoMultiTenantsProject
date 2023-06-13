@@ -80,7 +80,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'DjangoMultiTenants.wsgi.application'
-
+TEMPLATE_CONTEXT_PROCESSORS = ('django.context.request',)
+DEFAULT_FILE_STORAGE = 'tenant_schemas.storage.TenantFileSystemStorage'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
@@ -104,6 +105,7 @@ DATABASE_ROUTERS = (
 TENANT_MODEL = "tenant.Tenant"
 
 TENANT_DOMAIN_MODEL = "tenant.Domain"
+
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
